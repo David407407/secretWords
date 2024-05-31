@@ -1,0 +1,36 @@
+---
+import Button from '../components/Button.astro';
+import Layout from '../layouts/Layout.astro';
+import { emociones } from '../data/emociones'
+
+Astro.cookies.delete('words')
+
+---
+
+<Layout title="SecretWords">
+	<main class="w-3/5 mx-auto ">
+		<h3 class="text-center font-bold outfit text-4xl mb-10">¿Cómo te sientes?</h3>
+
+		<div class="grid gap-4 grid-cols-4">
+			{
+				emociones.map( emocion => (
+					<a class="w-full" href={`/${emocion.emocion}/${emocion.id}`}>
+						<Button>
+							<p>{emocion.emoji}</p>
+							<p>{emocion.emocion}</p>
+						</Button>
+					</a>
+					
+				))
+			}
+		</div>
+
+		
+		
+	</main>
+	
+</Layout>
+
+<style>
+	
+</style>

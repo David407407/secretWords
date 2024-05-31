@@ -1,0 +1,30 @@
+---
+import Button from "./Button.astro";
+import { emojis } from "../data/emojis"
+// let emoji
+// let i = 0;
+// setInterval(() => { 
+//     emoji = emojis[0]
+//     i++
+//     if(i === emojis.length) i = 0;
+// }, 500)
+---
+
+<nav class="flex px-20 py-8 justify-between items-center">
+    <a href="/">
+        <h2 class="text-4xl text-[#499958] font-black nunito">SecretWords</h2>
+    </a>
+    
+    {
+        Astro.params.feel && (
+            <a href="/">
+                <Button>
+                    <p>{}</p>
+                    <p>Cambia de emoción</p>
+                </Button>
+            </a>
+        )
+    }
+    
+    
+</nav>

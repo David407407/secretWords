@@ -1,0 +1,50 @@
+---
+import NavBar from '../components/NavBar.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="flex flex-col min-h-screen">
+		<NavBar />
+		<slot />
+		<footer class="mt-auto p-8">
+			<p class="text-center font-medium text-lg">Made by Andy David Tarango Calderón</p>
+		</footer>
+	</body>
+</html>
+<style is:global>
+	.nunito {
+		font-family: "Nunito", sans-serif;
+  		font-optical-sizing: auto;
+		font-style: normal;
+	}
+
+	.outfit {
+		font-family: "Outfit", sans-serif;
+  		font-optical-sizing: auto;
+		font-style: normal;
+	}
+
+	.montserrat {
+		font-family: "Montserrat Alternates", sans-serif;
+  		font-optical-sizing: auto;
+		font-style: normal;
+	}
+</style>

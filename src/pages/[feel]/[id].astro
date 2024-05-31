@@ -1,0 +1,31 @@
+---
+import { emociones } from '../../data/emociones'
+import { palabras } from '../../data/palabras'
+import Card from '../../components/Card.tsx';
+import Layout from '../../layouts/Layout.astro';
+
+const [ feeling ] = emociones.filter( emocion => emocion.id === Number(Astro.params.id) )
+let cookie: any = Astro.cookies.get('words')
+let words
+if( !cookie ) {
+    words = palabras.filter( w => w.emociones.includes(feeling.id))
+    Astro.cookies.set('words', JSON.stringify(words))
+} else {
+    words = JSON.parse(cookie.value)
+}
+
+---
+
+<Layout title="SecretWords">
+	<main class="w-3/5 mx-auto">
+		<h3 class="text-center font-bold outfit text-2xl mb-10">Te sientes: {feeling.emoji} {feeling.emocion}</h3>
+
+		<Card words={words} client:visible />
+		
+	</main>
+	
+</Layout>
+
+<style>
+	
+</style>
