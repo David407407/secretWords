@@ -13,17 +13,17 @@ const Card = (props: Props) => {
 
   return (
     <>
-        <div className="w-2/3 mx-auto rounded-3xl bg-[#A99A89] p-10">
-            <h1 className="text-6xl font-black text-right pb-4">{palabra}</h1>
+        <div className="w-11/12 lg:w-2/3  mx-auto rounded-3xl bg-[#A99A89] p-10">
+            <h1 className="lg:text-6xl text-4xl  font-black text-right pb-4">{palabra}</h1>
 
             <div className="w-11/12 mx-auto bg-black h-[2px]"></div>
 
             <div className="w-4/5 mx-auto py-6 space-y-6">
-                <p className="text-2xl font-medium text-center">{significado}</p>
-                <p className="text-3xl font-medium"> <span className="text-white">Idioma</span> - {idioma}</p>
+                <p className="lg:text-2xl text-lg font-medium text-center">{significado}</p>
+                <p className="lg:text-3xl text-xl font-medium"> <span className="text-white">Idioma</span> - {idioma}</p>
                 {
                     dato !== palabra && (
-                        <p className="text-3xl font-medium"> <span className="text-white">Dato</span> - { dato }</p>
+                        <p className="lg:text-3xl text-xl font-medium"> <span className="text-white">Dato</span> - { dato }</p>
                     )
                 }
                 

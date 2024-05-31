@@ -9,9 +9,9 @@ Astro.cookies.delete('words')
 
 <Layout title="SecretWords">
 	<main class="w-3/5 mx-auto ">
-		<h3 class="text-center font-bold outfit text-4xl mb-10">¿Cómo te sientes?</h3>
+		<h3 class="text-center font-bold outfit text-2xl lg:text-4xl mb-10">¿Cómo te sientes?</h3>
 
-		<div class="grid gap-4 grid-cols-4">
+		<div class="grid gap-4 lg:grid-cols-4">
 			{
 				emociones.map( emocion => (
 					<a class="w-full" href={`/${emocion.emocion}/${emocion.id}`}>
